@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding - MUST be first in head -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta description for search engines and social media -->
+    <meta name="description"
+        content="Learn why semantic HTML matters for accessibility, SEO, and maintainable code. Discover the benefits and see practical examples.">
+
+    <!-- Page title (shown in browser tab) -->
+    <title>Why Semantic HTML Matters - MyBlog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Header / Site branding */
+        header {
+            background: #fff;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Main content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        article {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #444;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin-bottom: 1rem;
+            margin-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Block quote */
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 1rem 1.5rem;
+        }
+
+        .cite {
+            display: block;
+            font-style: normal;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            color: #333;
+        }
+
+        /* Code */
+        code {
+            background: #f5f5f5;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Figure */
+        figure {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        figcaption {
+            margin-top: 0.75rem;
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Emphasis elements */
+        em {
+            font-style: italic;
+            color: #667eea;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Links */
+        a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Post metadata */
+        .post-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- PAGE HEADER: Site branding and primary navigation -->
+    <header>
+        <div class="site-title">MyBlog</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#blog">Blog</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT: Primary content of the page -->
+    <main>
+        <!-- ARTICLE: The blog post -->
+        <article>
+            <!-- POST TITLE: One h1 per page -->
+            <h1>Why Semantic HTML Matters</h1>
+
+            <!-- POST METADATA: Date and author -->
+            <div class="post-meta">
+                May 20, 2026 by Alex Carter
+            </div>
+
+            <!-- INTRODUCTION PARAGRAPH -->
+            <p>
+                Semantic HTML is the right tag for the meaning of your content.
+                It improves accessibility, SEO, and makes your code easier to maintain.
+            </p>
+
+            <!-- FIRST SECTION: Benefits -->
+            <h2>Benefits</h2>
+            <p>Using semantic HTML helps you:</p>
+
+            <!-- UNORDERED LIST: For non-sequential items -->
+            <ul>
+                <li>Create accessible websites</li>
+                <li>Improve search engine understanding</li>
+                <li>Write cleaner, more maintainable code</li>
+            </ul>
+
+            <!-- SECOND SECTION: Examples -->
+            <h2>Examples</h2>
+            <p>
+                When you focus on <em>semantic</em> expressiveness, you will always construct
+                live mapping maturity (not expressiveness), and avoid imperative ideas simply.
+            </p>
+
+            <!-- SUBSECTION: Image example -->
+            <h3>Visualizing Semantic HTML</h3>
+
+            <!-- FIGURE: Image with caption -->
+            <figure>
+                <!-- IMG: Always include alt text describing the image -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%23f5f5f5' stroke='%23999' stroke-width='2'/%3E%3Cline x1='50' y1='150' x2='150' y2='50' stroke='%23333' stroke-width='2'/%3E%3Cline x1='150' y1='50' x2='250' y2='100' stroke='%23333' stroke-width='2'/%3E%3Cline x1='250' y1='100' x2='350' y2='50' stroke='%23333' stroke-width='2'/%3E%3Ccircle cx='350' cy='50' r='8' fill='%23333'/%3E%3Ctext x='180' y='180' font-family='Arial' font-size='14' fill='%23666'%3EMountains of semantic HTML%3C/text%3E%3C/svg%3E"
+                    alt="A line graph showing an upward trend labeled 'Mountains of semantic HTML'">
+                <!-- FIGCAPTION: Explains the figure (not a replacement for alt) -->
+                <figcaption>The positive impact of semantic HTML on your project</figcaption>
+            </figure>
+
+            <!-- SUBSECTION: Code example -->
+            <h3>Code Sample</h3>
+            <p>
+                Here's the correct element for inline code. The
+                <code>&lt;code&gt;&lt;main&gt;&lt;/code&gt;</code> element is used for code samples. Here is a code
+                block:
+            </p>
+
+            <!-- PRE and CODE: For code blocks (use both together) -->
+            <pre><code>&lt;!-- This is semantic HTML --&gt;
+                &lt;main&gt;
+                &lt;article&gt;
+                    &lt;h1&gt;Article Title&lt;/h1&gt;
+                    &lt;p&gt;Semantic HTML makes the web better for everyone.&lt;/p&gt;
+                &lt;/article&gt;
+                &lt;/main&gt;</code></pre>
+
+            <!-- BLOCKQUOTE: For quoted text -->
+            <blockquote>
+                "The best way to learn HTML is by writing it."
+                <cite class="cite">— MDN Web Docs</cite>
+            </blockquote>
+
+            <!-- THIRD SECTION: Further reading -->
+            <h2>Learn More</h2>
+            <p>
+                <!-- DESCRIPTIVE LINK TEXT: Tells reader where the link goes -->
+                Read the
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html">
+                    HTML Semantics guide on MDN
+                </a>
+                to learn more about semantic HTML.
+            </p>
+        </article>
+    </main>
+
+    <!-- PAGE FOOTER: Copyright and closing information -->
+    <footer>
+        <p>&copy; 2026 MyBlog. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
